@@ -15,12 +15,12 @@
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^7 || ^8 || ^9",
         "sirbrillig/phpcs-variable-analysis": "^2.11"
     },
     "scripts": {
         "lint": "phpcs",
         "lint-fix": "phpcbf",
-        "test": "phpunit"
+        "test": "phpunit test --do-not-cache-result"
     }
 }
