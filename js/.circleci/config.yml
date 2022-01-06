@@ -5,7 +5,6 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.1
-  browser-tools: circleci/browser-tools@1.1.0
 
 executors:
   node:
@@ -17,11 +16,13 @@ jobs:
     executor:
       name: node
     steps:
-      - browser-tools/install-browser-tools
       - node/install-npm
       - checkout
-      - node/install-packages
-      - run: npm test
+      - node/install-packages:
+          app-dir: js
+      - run:
+          working_directory: js
+          command: npm test
 
 workflows:
   js-workflow-x:
