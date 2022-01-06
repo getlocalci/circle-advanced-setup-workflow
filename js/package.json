@@ -1,0 +1,26 @@
+{
+  "name": "example-js",
+  "version": "1.0.0",
+  "description": "Example JS directory",
+  "main": "src/multiply.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kienstra/circle-advanced-setup-workflow.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Ryan Kienstra",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/kienstra/circle-advanced-setup-workflow/issues"
+  },
+  "homepage": "https://github.com/kienstra/circle-advanced-setup-workflow#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.7",
+    "jest": "^27.4.7"
+  }
+}
