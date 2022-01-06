@@ -1,0 +1,37 @@
+# Config dedicated for js module
+# All the resources must be prefixed with `js-` to avoid conflicts
+
+version: 2.1
+
+orbs:
+  # Note: We are using an older version of hello-build, whereas module A uses the latest
+  js-hello-build: circleci/hello-build@0.0.13
+
+jobs:
+  js-build:
+    docker:
+      - image: alpine
+    steps:
+      - common-say-hello:
+          to: B
+      - run: echo 'Hello, from the js module! :3'
+
+  js-postrun:
+    docker:
+      - image: alpine
+    steps:
+      - run: echo 'Another job for js! :3'
+
+workflows:
+  js-workflow-x:
+    jobs:
+      - common-pre
+      - js-build:
+          requires:
+            - common-pre
+      - js-postrun:
+          requires:
+            - js-build
+  js-workflow-y:
+    jobs:
+      - js-hello-build/hello-build

@@ -1,11 +1,13 @@
 # Path filtering + config splitting on CircleCI
 
+Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow), with only minor changes.
+
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
 ## Files
 
 * `.circleci/config.yml` implements both 1) the setup workflow, and 2) common resources (i.e., jobs and commands) for main workflows/jobs.
-* `module-a/.circleci/config.yml`, `module-b/.circleci/config.yml`, and `module-c/.circleci/config.yml` implement independent modular configs for module A, B, and C, respectively.
+* `php/.circleci/config.yml`, `js/.circleci/config.yml`, and `e2e/.circleci/config.yml` implement independent modular configs for modules php/, js/, and e2e/, respectively.
 
 ## How does it work?
 
