@@ -4,24 +4,29 @@
 version: 2.1
 
 orbs:
-  e2e-hello-build: circleci/hello-build@0.0.14
+  node: circleci/node@3.0.0
 
 jobs:
   e2e-build:
-    docker:
-      - image: alpine
+    machine:
+      image: ubuntu-1604:202004-01
     steps:
-      - common-say-hello:
-          to: C
-      - run: echo 'Hello world from the e2e module! :3'
+      - checkout
+      - node/install-npm:
+          version: 16
+      - node/install-packages:
+          app-dir: e2e
+      - run:
+          working_directory: e2e
+          command: |
+            sudo apt-get update && sudo apt-get install php php-xml
+            npm run wp-env start
+            npm test
 
 workflows:
   e2e-workflow:
     jobs:
       - common-pre
       - e2e-build:
-          requires:
-            - common-pre
-      - e2e-hello-build/hello-build:
           requires:
             - common-pre
