@@ -14,7 +14,7 @@ jobs:
     steps:
       - common-say-hello:
           to: php
-      - run: echo 'Here is hello world from the php module! :3'
+      - run: echo 'Hello world from the php module! :3'
 
 workflows:
   php-workflow:
