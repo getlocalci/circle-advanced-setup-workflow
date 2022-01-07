@@ -1,13 +1,23 @@
 # Path filtering + config splitting on CircleCI
 
-Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow), with only minor changes.
+Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow).
+
+[Makoto Mizukami](https://github.com/circle-makotom) gets all of the credit for the CircleCI® configs, and the entire concept of this repo.
+
+The main change is making the module directories organized by language, like `js/` and `php/`, and adding very basic examples in them.
+
+This is similar to how WordPress plugins can look.
+
+The great thing about Makoto's idea here is that jobs for a directory only run when there's a diff in that directory.
+
+For example, if there's no diff in `js/`, the Jest test for that won't run.
 
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
 ## Files
 
 * `.circleci/config.yml` implements both 1) the setup workflow, and 2) common resources (i.e., jobs and commands) for main workflows/jobs.
-* `php/.circleci/config.yml`, `js/.circleci/config.yml`, and `e2e/.circleci/config.yml` implement independent modular configs for modules php/, js/, and e2e/, respectively.
+* `php/.circleci/config.yml`, `js/.circleci/config.yml`, and `e2e/.circleci/config.yml` implement independent modular configs for modules `php/`, `js/`, and `e2e/`, respectively.
 
 ## How does it work?
 

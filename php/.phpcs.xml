@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="Coding Standard for Example PHP">
+
+    <rule ref="PSR12" />
+
+    <arg value="p"/>
+    <arg value="s"/>
+    <arg name="extensions" value="php"/>
+
+    <!-- Include only the directories containing PHP files. -->
+    <file>src/</file>
+    <file>test/</file>
+</ruleset>

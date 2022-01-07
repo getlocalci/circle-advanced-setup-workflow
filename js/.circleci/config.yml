@@ -4,23 +4,25 @@
 version: 2.1
 
 orbs:
-  # Note: We are using an older version of hello-build, whereas module A uses the latest
-  js-hello-build: circleci/hello-build@0.0.13
+  node: circleci/node@4.1
+
+executors:
+  node:
+    docker:
+      - image: cimg/node:16.8.0-browsers
 
 jobs:
   js-build:
-    docker:
-      - image: alpine
+    executor:
+      name: node
     steps:
-      - common-say-hello:
-          to: B
-      - run: echo 'Hello, from the js module! :3'
-
-  js-postrun:
-    docker:
-      - image: alpine
-    steps:
-      - run: echo 'Another job for js! :3'
+      - node/install-npm
+      - checkout
+      - node/install-packages:
+          app-dir: js
+      - run:
+          working_directory: js
+          command: npm test
 
 workflows:
   js-workflow-x:
@@ -29,9 +31,3 @@ workflows:
       - js-build:
           requires:
             - common-pre
-      - js-postrun:
-          requires:
-            - js-build
-  js-workflow-y:
-    jobs:
-      - js-hello-build/hello-build
