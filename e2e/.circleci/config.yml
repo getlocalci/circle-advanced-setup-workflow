@@ -15,6 +15,7 @@ jobs:
       - node/install-packages:
           app-dir: e2e
       - run:
+          name: Run tests
           working_directory: e2e
           command: |
             sudo apt-get update && sudo apt-get install php php-xml
