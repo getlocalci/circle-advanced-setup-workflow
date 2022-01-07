@@ -15,6 +15,9 @@
   ],
   "author": "Ryan Kienstra",
   "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": "16"
+  },
   "bugs": {
     "url": "https://github.com/kienstra/circle-advanced-setup-workflow/issues"
   },
