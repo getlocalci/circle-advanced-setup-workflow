@@ -1,6 +1,12 @@
 # Path filtering + config splitting on CircleCI
 
-Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow), with only minor changes.
+Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow).
+
+[Makoto Mizukami](https://github.com/circle-makotom) gets all of the credit for the CircleCI® configs, and the entire concept of this repo.
+
+The main change is making the module directories organized by language, like `js/` and `php`, and adding very basic examples in them.
+
+This is similar to how WordPress plugins can look.
 
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
