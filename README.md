@@ -4,9 +4,13 @@ Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/c
 
 [Makoto Mizukami](https://github.com/circle-makotom) gets all of the credit for the CircleCI® configs, and the entire concept of this repo.
 
-The main change is making the module directories organized by language, like `js/` and `php`, and adding very basic examples in them.
+The main change is making the module directories organized by language, like `js/` and `php/`, and adding very basic examples in them.
 
 This is similar to how WordPress plugins can look.
+
+The great thing about Makoto's idea here is that jobs for a directory only run when there's a diff in that directory.
+
+For example, if there's no diff in `js/`, the Jest test for that won't run.
 
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
