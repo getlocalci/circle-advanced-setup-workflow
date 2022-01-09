@@ -59,6 +59,8 @@ workflows:
             e2e js
 
 orbs:
+  path-filtering: circleci/path-filtering@0.0.2
+
   # An "embedded" orb to facilitate config splitting
   config-splitting:
     # Dependencies
@@ -89,6 +91,13 @@ orbs:
             description: Emergency valve - forcibly build all the modules
             type: boolean
             default: false
+        path-filtering/filter:
+          name: check-updated-files
+          mapping: |
+            php/.* run-php true
+            js/.* run-js true
+            e2e/.* run-e2e true
+          base-revision: main
         steps:
           - run:
               name: Generate the list of modules having changes
