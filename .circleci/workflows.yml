@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  composer: stockfiller/composer@1.0.0
+
+jobs:
+  php-build:
+    when: << pipeline.parameters.php-modified >>
+    executor:
+      name: php
+    steps:
+      - checkout
+      - composer/install:
+          working-dir: php
+      - run:
+          working_directory: php
+          command: composer lint && composer test
+
+workflows:
+  run-test:
+    jobs:
+      - common-pre
+      - php-build:
+          requires:
+            - common-pre
