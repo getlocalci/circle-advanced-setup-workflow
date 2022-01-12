@@ -1,5 +1,5 @@
 import multiply from './multiply';
 
 test('example test', () => {
-  expect(multiply(3, 2)).toEqual(6);
+  expect(multiply(5, 2)).toEqual(10);
 });
