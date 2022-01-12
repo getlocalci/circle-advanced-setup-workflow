@@ -13,6 +13,6 @@ workflows:
           base-revision: main
           mapping: |
             php/.* php-modified true
-            js/.* js-modified true
+            js/src/.* js-modified true
             e2e/.* e2e-modified true
           config-path: .circleci/workflows.yml
