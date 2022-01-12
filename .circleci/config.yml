@@ -10,7 +10,6 @@ workflows:
     jobs:
       - path-filtering/filter:
           name: Create Dynamic Jobs
-          base-revision: main
           mapping: |
             php/.* php-modified true
             js/src/.* js-modified true

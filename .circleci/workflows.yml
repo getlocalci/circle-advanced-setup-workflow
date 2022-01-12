@@ -1,9 +1,5 @@
 version: 2.1
 
-orbs:
-  composer: stockfiller/composer@1.0.0
-  node: circleci/node@4.1
-
 parameters:
   php-modified:
     type: boolean
@@ -14,6 +10,10 @@ parameters:
   e2e-modified:
     type: boolean
     default: false
+
+orbs:
+  composer: stockfiller/composer@1.0.0
+  node: circleci/node@4.1
 
 jobs:
   php-build:
