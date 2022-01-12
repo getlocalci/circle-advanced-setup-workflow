@@ -11,7 +11,7 @@ workflows:
       - path-filtering/filter:
           name: Create Dynamic Jobs
           mapping: |
-            php/.* php-modified true
-            js/src/.* js-modified true
-            e2e/.* e2e-modified true
+            .*\.php$ run-php true
+            .*\.js$ run-js true
+            .*\.(php|js)$ run-e2e true
           config-path: .circleci/workflows.yml

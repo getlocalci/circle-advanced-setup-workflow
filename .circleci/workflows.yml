@@ -1,13 +1,13 @@
 version: 2.1
 
 parameters:
-  php-modified:
+  run-php:
     type: boolean
     default: false
-  js-modified:
+  run-js:
     type: boolean
     default: false
-  e2e-modified:
+  run-e2e:
     type: boolean
     default: false
 
@@ -53,15 +53,15 @@ jobs:
             npm test
 
 workflows:
-  run-php:
-    when: << pipeline.parameters.php-modified >>
+  php-flow:
+    when: << pipeline.parameters.run-php >>
     jobs:
       - php-build
-  run-js:
-    when: << pipeline.parameters.js-modified >>
+  js-flow:
+    when: << pipeline.parameters.run-js >>
     jobs:
       - js-build
-  run-e2e:
-    when: << pipeline.parameters.e2e-modified >>
+  e2e-flow:
+    when: << pipeline.parameters.run-e2e >>
     jobs:
       - e2e-build
