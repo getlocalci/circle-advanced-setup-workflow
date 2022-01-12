@@ -16,6 +16,6 @@ class ExampleTest extends TestCase
     public function testMultiply(): void
     {
         $instance = new Example();
-        $this->assertEquals(4, $instance->multiply(2, 2));
+        $this->assertEquals(12, $instance->multiply(4, 3));
     }
 }
