@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   composer: stockfiller/composer@1.0.0
+  node: circleci/node@4.1
 
 parameters:
   php-modified:
@@ -25,9 +26,42 @@ jobs:
       - run:
           working_directory: php
           command: composer lint && composer test
+  js-build:
+    docker:
+      - image: cimg/node:16.8.0-browsers
+    steps:
+      - node/install-npm
+      - checkout
+      - node/install-packages:
+          app-dir: js
+      - run:
+          working_directory: js
+          command: npm test
+  e2e-build:
+    machine:
+      image: ubuntu-1604:202004-01
+    steps:
+      - checkout
+      - node/install-packages:
+          app-dir: e2e
+      - run:
+          name: Run tests
+          working_directory: e2e
+          command: |
+            sudo apt-get update && sudo apt-get install php php-xml
+            npm run wp-env start
+            npm test
 
 workflows:
   run-php:
     when: << pipeline.parameters.php-modified >>
     jobs:
       - php-build
+  run-js:
+    when: << pipeline.parameters.js-modified >>
+    jobs:
+      - js-build
+  run-e2e:
+    when: << pipeline.parameters.e2e-modified >>
+    jobs:
+      - e2e-build
