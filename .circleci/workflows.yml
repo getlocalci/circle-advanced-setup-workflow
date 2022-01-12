@@ -19,7 +19,4 @@ jobs:
 workflows:
   run-test:
     jobs:
-      - common-pre
-      - php-build:
-          requires:
-            - common-pre
+      - php-build
