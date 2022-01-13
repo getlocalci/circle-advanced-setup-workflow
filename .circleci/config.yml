@@ -9,7 +9,7 @@ workflows:
   setup:
     jobs:
       - path-filtering/filter:
-          name: Create Dynamic Jobs
+          name: Create dynamic jobs
           mapping: |
             .*\.php$ run-php true
             .*\.js$ run-js true
