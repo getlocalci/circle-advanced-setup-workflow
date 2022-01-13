@@ -8,9 +8,11 @@ The main change is making the module directories organized by language, like `js
 
 This is similar to how WordPress plugins can look.
 
-The great thing about Makoto's idea here is that jobs for a directory only run when there's a diff in that directory.
+The great thing about Makoto's idea here is that jobs only run when there's a certain diff.
 
-For example, if there's no diff in `js/`, the Jest test for that won't run.
+For example, if there's no `.php` file in the diff, the PHPUnit tests won't run.
+
+And if the only edits are in `README.md`, no dynamic jobs run.
 
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
