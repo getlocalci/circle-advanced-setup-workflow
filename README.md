@@ -1,4 +1,4 @@
-# Path filtering in CircleCI
+# Path filtering with CircleCI
 
 Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow).
 
