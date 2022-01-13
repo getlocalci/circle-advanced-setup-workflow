@@ -12,7 +12,7 @@ The great thing about Makoto's idea here is that jobs only run when there's a ce
 
 For example, if there's no `.php` file in the diff, the PHPUnit tests won't run.
 
-And if the only edits are in `README.md`, no dynamic jobs run.
+And if the PR only changes the `README.md`, no dynamic jobs will run.
 
 This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
 
