@@ -6,8 +6,8 @@ namespace Asw\ExamplePhp;
 
 class Example
 {
-    public function multiply(int $firstMultiple, int $secondMultiple): int
+    public function multiply(int $multipleOne, int $multipleTwo): int
     {
-        return $secondMultiple * $firstMultiple;
+        return $multipleOne * $multipleTwo;
     }
 }
