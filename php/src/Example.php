@@ -8,6 +8,6 @@ class Example
 {
     public function multiply(int $firstMultiple, int $secondMultiple): int
     {
-        return $firstMultiple * $secondMultiple;
+        return $secondMultiple * $firstMultiple;
     }
 }
