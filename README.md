@@ -4,7 +4,7 @@ Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/c
 
 [Makoto Mizukami](https://github.com/circle-makotom) gets all of the credit for the CircleCI® configs, and the entire concept of this repo.
 
-The main change is making the module directories organized by language, like `js/` and `php/`, and adding very basic examples in them.
+Now, the module directories are organized by language, like `js/` and `php/`, and adding very basic examples in them.
 
 This is similar to how WordPress plugins can look.
 
@@ -14,7 +14,7 @@ For example, if there's no `.php` file in the diff, the PHPUnit tests won't run.
 
 And if the PR only changes the `README.md`, no dynamic jobs will run.
 
-This repository demonstrates an advanced use case of setup workflow feature on CircleCI. For instance, it implements both path filtering and config splitting.
+This repository demonstrates an advanced use case of the [setup workflow](https://circleci.com/blog/introducing-dynamic-config-via-setup-workflows/) feature on [CircleCI](https://circleci.com/docs/2.0/first-steps/).
 
 ## How does it work?
 
