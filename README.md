@@ -4,7 +4,7 @@ Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/c
 
 [Makoto Mizukami](https://github.com/circle-makotom) gets all of the credit for the [CircleCI®](https://circleci.com/docs/2.0/first-steps/) configs, and the entire concept of this repo.
 
-Now, the module directories are organized by language, like `js/` and `php/`, and adding very basic examples in them.
+As a slight change, the module directories are organized by language, like `js/` and `php/`.
 
 This is similar to how WordPress plugins can look.
 
