@@ -8,6 +8,8 @@ As a slight change, the module directories are organized by language, like `js/`
 
 This is similar to how WordPress plugins can look.
 
+## Only runs jobs that are needed
+
 The great thing about Makoto's idea here is that jobs only run when there's a certain diff.
 
 For example, if there's no `.php` file in the diff, the PHPUnit tests won't run.
