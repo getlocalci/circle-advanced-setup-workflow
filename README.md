@@ -12,7 +12,9 @@ The great thing about Makoto's idea here is that jobs only run when there's a ce
 
 For example, if there's no `.php` file in the diff, the PHPUnit tests won't run.
 
-And if the PR only changes the `README.md`, no dynamic jobs will run.
+If there's no `.js` file in the diff, the Jest tests won't run.
+
+And if the PR only changes the `README.md`, no dynamic job will run, only the job `Create dynamic jobs`.
 
 This repository demonstrates an advanced use case of the [setup workflow](https://circleci.com/blog/introducing-dynamic-config-via-setup-workflows/) feature on CircleCI.
 
