@@ -14,4 +14,3 @@ workflows:
             .*\.php$ run-php true
             .*\.js$ run-js true
             .*\.(php|js|json|yml)$ run-e2e true
-          config-path: .circleci/workflows.yml
