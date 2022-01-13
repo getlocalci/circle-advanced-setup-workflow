@@ -25,5 +25,5 @@ This repository demonstrates an advanced use case of the [setup workflow](https:
 1. CircleCI triggers the setup job `Create dynamic jobs`, defined in [.circleci/config.yml](.circleci/config.yml).
 2. That job finds which file types were changed in the current branch versus the [main](https://github.com/kienstra/circle-advanced-setup-workflow/tree/main) branch.
 3. It emits those changed file types as pipeline parameters.
-4. [.circleci/workflow.yml](.circleci/workflow.yml) receives those pipeline parameters.
+4. [.circleci/workflow.yml](.circleci/workflow.yml) receives those pipeline parameters, like `<< pipeline.parameters.run-php >>`.
 5. Those determine whether to run the jobs for [php/](php/), [js/](js/), and [e2e/](e2e/).
