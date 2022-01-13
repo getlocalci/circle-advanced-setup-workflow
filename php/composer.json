@@ -1,6 +1,6 @@
 {
     "name": "asw/example-php",
-    "description": "Example PHP directory",
+    "description": "An example PHP directory",
     "type": "library",
     "license": "GPL-2.0-or-later",
     "autoload": {
