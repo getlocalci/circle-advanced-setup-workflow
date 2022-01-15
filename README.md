@@ -1,6 +1,6 @@
 # Path filtering on CircleCI
 
-Here's a [step-by-step guide](https://getlocalci.com/circleci-dynamic-config/) to setting up a repo like this.
+Here's a [detailed post](https://getlocalci.com/circleci-dynamic-config/) on how to set up a repo like this.
 
 Forked from [circle-makotom/circle-advanced-setup-workflow](https://github.com/circle-makotom/circle-advanced-setup-workflow).
 
