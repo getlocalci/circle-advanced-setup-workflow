@@ -1,4 +1,4 @@
-# Path filtering on CircleCI
+# Dynamic Configuration on CircleCI
 
 Here's a [detailed post](https://getlocalci.com/circleci-dynamic-config/) on how to set up a repo like this.
 
