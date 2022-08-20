@@ -10,12 +10,6 @@ parameters:
   run-baz:
     type: boolean
     default: false
-  run-php:
-    type: boolean
-    default: false
-  run-e2e:
-    type: boolean
-    default: false
 
 orbs:
   node: circleci/node@5.0
