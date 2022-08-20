@@ -15,18 +15,14 @@ orbs:
   node: circleci/node@5.0
 
 workflows:
-  foo:
-    when: << pipeline.parameters.run-foo >>
-    jobs:
-      - node/test:
-          app-dir: packages/foo
-  bar:
-    when: << pipeline.parameters.run-bar >>
-    jobs:
-      - node/test:
-          app-dir: packages/bar
-  baz:
-    when: << pipeline.parameters.run-baz >>
-    jobs:
-      - node/test:
-          app-dir: packages/baz
+  build-run:
+  jobs:
+    - node/test:
+        app-dir: packages/foo
+        when: << pipeline.parameters.run-foo >>
+    - node/test:
+        app-dir: packages/bar
+        when: << pipeline.parameters.run-bar >>
+    - node/test:
+        app-dir: packages/baz
+        when: << pipeline.parameters.run-baz >>
