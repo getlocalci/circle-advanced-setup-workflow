@@ -6,6 +6,6 @@
   "scripts": {
     "test": "echo \"No test, just an example\" && exit 0"
   },
-  "author": "Ryan Kienstra",
+  "author": "Ryan D. Kienstra",
   "license": "GPL-2.0-or-later"
 }
