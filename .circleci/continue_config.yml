@@ -65,9 +65,10 @@ workflows:
       - php-build
   js-flow:
     when:
-      - or: << pipeline.parameters.run-foo >>
-      - or: << pipeline.parameters.run-bar >>
-      - or: << pipeline.parameters.run-baz >>
+      or:
+        - << pipeline.parameters.run-foo >>
+        - << pipeline.parameters.run-bar >>
+        - << pipeline.parameters.run-baz >>
     jobs:
       - js-build
   e2e-flow:
