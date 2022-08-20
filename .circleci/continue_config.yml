@@ -18,30 +18,33 @@ jobs:
   foo:
     executor: node/default
     steps:
-      when: << pipeline.parameters.run-foo >>
-      steps:
-        - checkout
-        - run:
-          command: npm ci && npm test
-          working_directory: packages/foo
+      - when:
+          condition: << pipeline.parameters.run-foo >>
+          steps:
+            - checkout
+            - run:
+              command: npm ci && npm test
+              working_directory: packages/foo
   bar:
+    executor: node/default
     steps:
-      when: << pipeline.parameters.run-bar >>
-      executor: node/default
-      steps:
-        - checkout
-        - run:
-          command: npm ci && npm test
-          working_directory: packages/bar
+      - when:
+          condition: << pipeline.parameters.run-baz >>
+          steps:
+            - checkout
+            - run:
+              command: npm ci && npm test
+              working_directory: packages/baz
   baz:
+    executor: node/default
     steps:
-      when: << pipeline.parameters.run-baz >>
-      executor: node/default
-      steps:
-        - checkout
-        - run:
-          command: npm ci && npm test
-          working_directory: packages/baz
+      - when:
+          condition: << pipeline.parameters.run-bar >>
+          steps:
+            - checkout
+            - run:
+              command: npm ci && npm test
+              working_directory: packages/bar
 
 workflows:
   build-run:
