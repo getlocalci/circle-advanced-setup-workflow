@@ -14,12 +14,32 @@ parameters:
 orbs:
   node: circleci/node@5.0
 
+jobs:
+  foo:
+    steps:
+      when: << pipeline.parameters.run-foo >>
+      steps:
+        run:
+          command: npm ci && npm test
+          working_directory: packages/foo
+  bar:
+    steps:
+      when: << pipeline.parameters.run-bar >>
+      steps:
+        run:
+          command: npm ci && npm test
+          working_directory: packages/bar
+  baz:
+    steps:
+      when: << pipeline.parameters.run-baz >>
+      steps:
+        run:
+          command: npm ci && npm test
+          working_directory: packages/baz
+
 workflows:
   build-run:
-  jobs:
-    - node/test:
-        when: << pipeline.parameters.run-foo >>
-    - node/test:
-        when: << pipeline.parameters.run-bar >>
-    - node/test:
-        when: << pipeline.parameters.run-baz >>
+    jobs:
+      - foo
+      - bar
+      - baz
