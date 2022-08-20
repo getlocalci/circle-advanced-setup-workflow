@@ -18,8 +18,8 @@ workflows:
   build-run:
   jobs:
     - node/test:
-        - when: << pipeline.parameters.run-foo >>
+        when: << pipeline.parameters.run-foo >>
     - node/test:
-        - when: << pipeline.parameters.run-bar >>
+        when: << pipeline.parameters.run-bar >>
     - node/test:
-        - when: << pipeline.parameters.run-baz >>
+        when: << pipeline.parameters.run-baz >>
