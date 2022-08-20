@@ -4,7 +4,7 @@
   "description": "Foo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: there is no test specified\" && exit 1"
+    "test": "echo \"No test, just an example\" && exit 0"
   },
   "author": "Ryan Kienstra",
   "license": "GPL-2.0-or-later"

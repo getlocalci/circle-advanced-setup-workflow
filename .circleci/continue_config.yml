@@ -18,60 +18,21 @@ parameters:
     default: false
 
 orbs:
-  composer: stockfiller/composer@1.0.0
-  node: circleci/node@4.1
-
-jobs:
-  php-build:
-    docker:
-      - image: cimg/php:8.1
-    steps:
-      - checkout
-      - composer/install:
-          working-dir: php
-      - run:
-          working_directory: php
-          command: composer lint && composer test
-  js-build:
-    docker:
-      - image: cimg/node:16.8.0-browsers
-    steps:
-      - node/install-npm
-      - checkout
-      - node/install-packages:
-          app-dir: js
-      - run:
-          working_directory: js
-          command: npm test
-  e2e-build:
-    machine:
-      image: ubuntu-1604:202004-01
-    steps:
-      - checkout
-      - node/install-packages:
-          app-dir: e2e
-      - run:
-          name: Run tests
-          working_directory: e2e
-          command: |
-            sudo apt-get update && sudo apt-get install php php-xml
-            npm run wp-env start
-            npm test
+  node: circleci/node@5.0
 
 workflows:
-  php-flow:
-    when: << pipeline.parameters.run-php >>
+  foo:
+    when: << pipeline.parameters.run-foo >>
     jobs:
-      - php-build
-  js-flow:
-    when:
-      or:
-        - << pipeline.parameters.run-foo >>
-        - << pipeline.parameters.run-bar >>
-        - << pipeline.parameters.run-baz >>
+      - node/test:
+          app-dir: packages/foo
+  bar:
+    when: << pipeline.parameters.run-bar >>
     jobs:
-      - js-build
-  e2e-flow:
-    when: << pipeline.parameters.run-e2e >>
+      - node/test:
+          app-dir: packages/bar
+  baz:
+    when: << pipeline.parameters.run-baz >>
     jobs:
-      - e2e-build
+      - node/test:
+          app-dir: packages/baz
