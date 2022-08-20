@@ -18,11 +18,11 @@ workflows:
   build-run:
   jobs:
     - node/test:
-        app-dir: packages/foo
-        when: << pipeline.parameters.run-foo >>
+        - app-dir: packages/foo
+        - when: << pipeline.parameters.run-foo >>
     - node/test:
-        app-dir: packages/bar
-        when: << pipeline.parameters.run-bar >>
+        - app-dir: packages/bar
+        - when: << pipeline.parameters.run-bar >>
     - node/test:
-        app-dir: packages/baz
-        when: << pipeline.parameters.run-baz >>
+        - app-dir: packages/baz
+        - when: << pipeline.parameters.run-baz >>
