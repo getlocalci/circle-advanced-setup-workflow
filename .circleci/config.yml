@@ -11,8 +11,8 @@ workflows:
       - path-filtering/filter:
           name: Create dynamic jobs
           mapping: |
-            packages/foo/. foo-changed true
-            packages/bar/. bar-changed true
-            packages/baz/. baz-changed true
+            packages/foo/.* foo-changed true
+            packages/bar/.* bar-changed true
+            packages/baz/.* baz-changed true
             .*\.php$ run-php true
             .*\.(php|js|json|yml)$ run-e2e true
