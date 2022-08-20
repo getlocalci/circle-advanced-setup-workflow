@@ -1,10 +1,16 @@
 version: 2.1
 
 parameters:
-  run-php:
+  run-foo:
     type: boolean
     default: false
-  run-js:
+  run-bar:
+    type: boolean
+    default: false
+  run-baz:
+    type: boolean
+    default: false
+  run-php:
     type: boolean
     default: false
   run-e2e:
@@ -58,7 +64,10 @@ workflows:
     jobs:
       - php-build
   js-flow:
-    when: << pipeline.parameters.run-js >>
+    when:
+      - or: << pipeline.parameters.run-foo >>
+      - or: << pipeline.parameters.run-bar >>
+      - or: << pipeline.parameters.run-baz >>
     jobs:
       - js-build
   e2e-flow:
