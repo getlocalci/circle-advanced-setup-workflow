@@ -16,24 +16,30 @@ orbs:
 
 jobs:
   foo:
+    executor: node/default
     steps:
       when: << pipeline.parameters.run-foo >>
       steps:
-        run:
+        - checkout
+        - run:
           command: npm ci && npm test
           working_directory: packages/foo
   bar:
     steps:
       when: << pipeline.parameters.run-bar >>
+      executor: node/default
       steps:
-        run:
+        - checkout
+        - run:
           command: npm ci && npm test
           working_directory: packages/bar
   baz:
     steps:
       when: << pipeline.parameters.run-baz >>
+      executor: node/default
       steps:
-        run:
+        - checkout
+        - run:
           command: npm ci && npm test
           working_directory: packages/baz
 
